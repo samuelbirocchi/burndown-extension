@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "Burndown-extension",
+  "description": "Extensão para lembrar de preencher o burndown",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches" : ["https://mail.google.com/*", "https://inbox.google.com/*"],
+      "js": ["functions.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "ic_launcher.png",
+    "default_popup": "options.html"
+  },
+  "icons" : {
+    "128" : "ic_launcher.png",
+    "48"  : "ic_launcher.png"
+    },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "https://ajax.googleapis.com/",
+    "storage"
+  ]
+}
